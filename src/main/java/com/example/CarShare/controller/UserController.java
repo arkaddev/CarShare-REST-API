@@ -1,7 +1,6 @@
 package com.example.CarShare.controller;
 
 import com.example.CarShare.model.User;
-import com.example.CarShare.repository.UserRepository;
 import com.example.CarShare.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
