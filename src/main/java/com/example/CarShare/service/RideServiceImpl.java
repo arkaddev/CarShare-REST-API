@@ -22,4 +22,9 @@ public class RideServiceImpl implements RideService {
     public List<Ride> getAllRides() {
         return rideRepository.findAll();
     }
+
+    @Override
+    public Ride addNewRide(Ride ride) {
+        return rideRepository.save(ride);
+    }
 }

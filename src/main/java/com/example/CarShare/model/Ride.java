@@ -15,17 +15,22 @@ public class Ride {
     private double cost;
     private int correct;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
 
     public Ride() {
     }
 
-    public Ride(Long id, String date, int initialCounter, int finalCounter, double cost, int correct) {
+    public Ride(Long id, String date, int initialCounter, int finalCounter, double cost, int correct, User user) {
         this.id = id;
         this.date = date;
         this.initialCounter = initialCounter;
         this.finalCounter = finalCounter;
         this.cost = cost;
         this.correct = correct;
+        this.user = user;
     }
 
     public Long getId() {
@@ -34,14 +39,6 @@ public class Ride {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getCorrect() {
-        return correct;
-    }
-
-    public void setCorrect(int correct) {
-        this.correct = correct;
     }
 
     public String getDate() {
@@ -74,5 +71,21 @@ public class Ride {
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public int getCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(int correct) {
+        this.correct = correct;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
